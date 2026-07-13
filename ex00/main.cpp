@@ -1,5 +1,6 @@
 #include "BitcoinExchange.hpp"
 #include <iostream>
+#include <stdexcept>
 
 int main(int ac, char **av)
 {
@@ -10,8 +11,14 @@ int main(int ac, char **av)
 	}
 	BitcoinExchange btc;
 
-	btc.loadDatabase();
-	btc.processInputFile(av[1]);
-
+	try
+	{
+		btc.loadDatabase();
+		btc.processInputFile(av[1]);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	return 0;
 }

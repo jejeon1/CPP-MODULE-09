@@ -10,9 +10,11 @@ class BitcoinExchange
 private:
 	std::map<std::string, double> _database;
 
-	bool isValidRate(const std::string& str) const;
-	bool isValidDate(const std::string& str) const;
+	bool isValidDate(const std::string& str, const std::string& line) const;
+	bool isValidValue(const std::string& value, const std::string& line) const;
+	bool isValidNumber(const std::string& str) const;
 	bool isLeapYear(int year) const;
+	bool badInput(const std::string& line) const;
 public:
 	BitcoinExchange();
 	BitcoinExchange(const BitcoinExchange& other);
