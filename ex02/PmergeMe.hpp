@@ -21,11 +21,19 @@ class PmergeMe
         std::vector<int> _vector;
         std::deque<int> _deque;
 
-        void fordJohnsonVector(std::vector<int>& values);
+        double _vectorTime;
+        double _dequeTime;
 
-        std::vector<std::pair<int, int> > orderedPairs(
+        void fordJohnsonVector(std::vector<int>& values);
+        void fordJohnsonDeque(std::deque<int>& values);
+
+        std::vector<std::pair<int, int> > orderedPairsVector(
             const std::vector<std::pair<int, int> >& pairs,
             const std::vector<int>& winners) const;
+
+        std::deque<std::pair<int, int> > orderedPairsDeque(
+            const std::deque<std::pair<int, int> >& pairs,
+            const std::deque<int>& winners) const;
 
         std::vector<std::size_t> makeInsertionOrder(
             std::size_t bCount) const;

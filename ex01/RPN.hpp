@@ -3,11 +3,12 @@
 
 #include <stack>
 #include <string>
+#include <list>
 
 class RPN
 {
     private:
-        std::stack<int> _s;
+        std::stack<int, std::list<int> > _s;
     public:
         RPN();
         RPN(const RPN& other);

@@ -16,8 +16,10 @@ int main(int ac, char **av)
         sorter.printBefore();
 
         sorter.sortVector();
+        sorter.sortDeque();
 
         sorter.printAfter();
+        sorter.printTimes();
 
         return 0;
     }
